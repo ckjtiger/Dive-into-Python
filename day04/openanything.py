@@ -78,7 +78,7 @@ def fetch(source, etag=None, last_modified=None, agent=USER_AGENT):
         result['lastmodified'] = f.headers.get('Last-Modified')
         if f.headers.get('content-encoding', '') == 'gzip':
             # data came back gzip-compressed, decompress it
-            result['data'] = gzip.GzipFile(fileobj=StringIO(result['data']])).read()
+            result['data'] = gzip.GzipFile(fileobj=StringIO(result['data'])).read()
     if hasattr(f, 'url'):
         result['url'] = f.url
         result['status'] = 200
